@@ -22,4 +22,4 @@ See here: https://github.com/ageitgey/face_recognition
 * picamera 
 * OpenCV
 * Keras / Tensorflow
-* random Python libraries
+* various Python libraries

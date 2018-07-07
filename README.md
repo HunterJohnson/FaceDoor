@@ -1,7 +1,7 @@
 # FaceDoor
 
-![alt text](https://raw.githubusercontent.com/HunterJohnson/FaceDoor/examples/result61.jpg
-![alt text](https://raw.githubusercontent.com/HunterJohnson/FaceDoor/examples/result882.jpg
+![alt text](https://raw.githubusercontent.com/HunterJohnson/FaceDoor/examples/result61.jpg)
+![alt text](https://raw.githubusercontent.com/HunterJohnson/FaceDoor/examples/result882.jpg)
 
 door lock system using Facial Recognition on the Raspberry Pi
 

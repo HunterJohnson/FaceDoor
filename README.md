@@ -17,6 +17,7 @@ See here: https://github.com/ageitgey/face_recognition
 * Raspberry Pi 3
 * Camera of choice (I used a NoIR that cost about $25 on Amazon)
 * 12V lock style solenoid
+* Hammer/nails or Drill/screws to secure the lock to your door of choice (or even just strong tape if you want to test it out)
 * 5V relay
 * 12V power supply + DC adapter
 

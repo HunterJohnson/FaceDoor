@@ -34,7 +34,7 @@ if __name__ == "__main__":
 
 
 def getLatestFace():
-	latest_file = max(allFilesUnder('/home/pi/Documents/C421/frdoor_project/'), key=os.path.getmtime)
+	latest_file = max(allFilesUnder('/home/pi/Documents/frdoor_project/'), key=os.path.getmtime)
 
 def allFilesUnder(path):
 	for cur_path, dirnames, filenames in os.walk(path):

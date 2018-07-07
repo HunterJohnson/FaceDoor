@@ -11,7 +11,7 @@ def face_detected():
     start = time.time()
     end = 0
     diff = 0
-    while(found != True or diff <= 30.0):
+    while(found != True or diff <= 30.0): # function has 30 seconds to find a face, otherwise revert to motion_detection()
         #Create a memory stream so photos doesn't need to be saved in a file
         stream = io.BytesIO()
 
@@ -35,10 +35,7 @@ def face_detected():
 
     #Look for faces in the image using the loaded cascade file
         faces = face_cascade.detectMultiScale(gray, 1.1, 5)
-
-#if(len(faces) >= 1):
-	# recognition
-
+	
         print("Found "+str(len(faces))+" face(s)")
 
     #Draw a rectangle around every found face

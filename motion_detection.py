@@ -72,11 +72,6 @@ def motion_detected():
 			cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
 			text = "!"
 
-                # draw the text and timestamp on the frame
-                ts = timestamp.strftime("%A %d %B %Y %I:%M:%S%p")
-                cv2.putText(frame, "{}".format(ts), (10, 20),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
-
                 # check to see if space is occupied
                 if(text == "!"):
                     # check to see if enough time has passed between uploads
@@ -87,7 +82,7 @@ def motion_detected():
 			# check to see if the number of frames with consistent motion is
 			# high enough
 			if(motionCounter >= 8):
-                            print("MOTION DETECTED")
+                            print("Motion Detected!")
                             camera.close()
                             return True            
 

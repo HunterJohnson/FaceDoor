@@ -1,4 +1,8 @@
-#Verifying faces found in AR_Face / LFW dataset
+#Verifying faces found in AR_Face / LFW dataset, this file is used to train our model 
+
+# once we have a .h5 file with the architecture + weights
+# of the trained VGG_Face model, we use that to make predictions on new images
+
 import os
 import time as t
 import numpy as np

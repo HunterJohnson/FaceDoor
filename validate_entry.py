@@ -6,7 +6,7 @@ from keras_vggface.vggface import VGGFace
 from keras_vggface import utils
 from skimage import io, transform
 
-permitted = ["Hunter_Johnson", "Sven_Johnson", "Karen_Johnson", "Eric_Johnson"] # permitted entrant labels
+permitted = ["Person_1", "Person_2"] # permitted entrant labels, change as necessary
 
 def valid_entrant(img):
 	model = VGGFace(input_shape=(224,224,3)) # (weights='vggface') for default

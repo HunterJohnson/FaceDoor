@@ -28,7 +28,7 @@ def face_detected():
         image = cv2.imdecode(buff, 1)
 
     #Load a cascade file for detecting faces
-        face_cascade = cv2.CascadeClassifier('/home/pi/Documents/C421/frdoor_project/haarcascade_frontalface_default_2.xml')
+        face_cascade = cv2.CascadeClassifier('/FaceDoor/haarcascade_frontalface_default_2.xml')
 
     #Convert to grayscale
         gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)

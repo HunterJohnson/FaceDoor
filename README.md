@@ -37,12 +37,14 @@ See here: https://github.com/ageitgey/face_recognition
    
    Then this model is saved as .h5 / .hdf5 file and used to make predictions on new input images, to determine if the
    person trying to enter is on the whitelist of permitted entrants. 
+   
+ ---------------------------------------------------------------------------------------------------------------------
 
-*if motion_detected(camera_stream):*
+if motion_detected(camera_stream):
 
-     *if face_detected():*
+     if face_detected():
      
-          *if valid_entrant(img):*
+          if valid_entrant(img):
           
                 unlock_door()
                 

@@ -143,6 +143,6 @@ vggface_model.fit_generator(train_generator,
                     validation_steps=VALIDATION_STEPS_PER_EPOCH,
                     callbacks=[vggface_csv_logger, vggface_model_saver]);
 
-#saveexample predictions with images for each model from the validation generator
+#save example predictions with images for each model from the validation generator
 
 save_prediction_examples(num_examples=4, validation_image_generator=validation_generator, model=vggface_model, folder_path=timestamp, model_name='vggface_d2_adamax')

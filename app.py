@@ -1,4 +1,4 @@
-# Hunter Johnson - C421
+# Hunter Johnson - 2018
 
 import RPi.GPIO as GPIO
 from motion_detection import motion_detected

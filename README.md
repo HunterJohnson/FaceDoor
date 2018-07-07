@@ -28,3 +28,20 @@ See here: https://github.com/ageitgey/face_recognition
 * OpenCV
 * Keras / Tensorflow
 * various Python libraries
+
+# Project Structure
+
+1. The project basically works as an infinite loop in app.py until the program is terminated.
+   You will need to train the VGG_Face model with at least 20-30 images of each person who should be allowed access. 
+   (more is even better)
+   
+   Then this model is saved as .h5 / .hdf5 file and used to make predictions on new input images, to determine if the
+   person trying to enter is on the whitelist of permitted entrants. 
+
+*if motion_detected(camera_stream):
+     if face_detected():
+          if valid_entrant(img):  
+                unlock_door()
+          else:
+               "Access Denied"
+        

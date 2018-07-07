@@ -9,7 +9,7 @@ to use this API that I discovered after completing this project
 
 See here: https://github.com/ageitgey/face_recognition
 
-# HARDWARE
+# Hardware
 
 * Raspberry Pi 3
 * Camera of choice (I used a NoIR that cost like $25 on Amazon)
@@ -17,7 +17,9 @@ See here: https://github.com/ageitgey/face_recognition
 * 5V relay
 * 12V power supply + DC adapter
 
-# SOFTWARE
+--> Total Cost ~$50-75 not including the Pi itself
+
+# Software
 
 * picamera 
 * OpenCV

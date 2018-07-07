@@ -24,7 +24,7 @@ def face_detected():
     #Convert the picture into a numpy array
         buff = numpy.fromstring(stream.getvalue(), dtype=numpy.uint8)
 
-    #Now creates an OpenCV image
+    #create an OpenCV image
         image = cv2.imdecode(buff, 1)
 
     #Load a cascade file for detecting faces
@@ -38,7 +38,7 @@ def face_detected():
 	
         print("Found "+str(len(faces))+" face(s)")
 
-    #Draw a rectangle around every found face
+    #Draw a green rectangle around every found face, this color can be easily changed by modifying the RGB params (R,G,B)
         for (x,y,w,h) in faces:
             cv2.rectangle(image,(x,y),(x+w,y+h),(0,255,0),2)
 

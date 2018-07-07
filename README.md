@@ -15,7 +15,7 @@ See here: https://github.com/ageitgey/face_recognition
 # Hardware
 
 * Raspberry Pi 3
-* Camera of choice (I used a NoIR that cost like $25 on Amazon)
+* Camera of choice (I used a NoIR that cost about $25 on Amazon)
 * 12V lock style solenoid
 * 5V relay
 * 12V power supply + DC adapter

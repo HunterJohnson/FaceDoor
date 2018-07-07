@@ -1,8 +1,5 @@
-#from pyimagesearch.tempimage import TempImage
-#import dropbox as dbx
 from picamera.array import PiRGBArray
 from picamera import PiCamera
-import picamera
 import warnings
 import datetime
 import time
@@ -29,8 +26,6 @@ def motion_detected():
 	avg = None
 	lastUploaded = datetime.datetime.now()
 	motionCounter = 0
-	#Load a cascade file for detecting faces
-	face_cascade = cv2.CascadeClassifier('/home/pi/documents/C421/frdoor_project/haarcascade_frontalface_default_2.xml')
 	# capture frames from the camera
 	for f in camera.capture_continuous(rawCapture, format="bgr", use_video_port=True):
     	# grab the raw NumPy array representing the image and initialize
@@ -77,79 +72,28 @@ def motion_detected():
 			cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
 			text = "!"
 
-	# draw the text and timestamp on the frame
-	ts = timestamp.strftime("%A %d %B %Y %I:%M:%S%p")
-	cv2.putText(frame, "{}".format(ts), (10, 20),
-		cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
+                # draw the text and timestamp on the frame
+                ts = timestamp.strftime("%A %d %B %Y %I:%M:%S%p")
+                cv2.putText(frame, "{}".format(ts), (10, 20),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
 
-	# check to see if the room is occupied
-	if(text == "!"):
-		# check to see if enough time has passed between uploads
-		if((timestamp - lastUploaded).seconds >= 3.0):
+                # check to see if space is occupied
+                if(text == "!"):
+                    # check to see if enough time has passed between uploads
+                    if((timestamp - lastUploaded).seconds >= 3.0):
 			# increment the motion counter
 			motionCounter += 1
 
 			# check to see if the number of frames with consistent motion is
 			# high enough
 			if(motionCounter >= 8):
-                     print("MOTION DETECTED")
-                     return True            
+                            print("MOTION DETECTED")
+                            camera.close()
+                            return True            
 
-				"""
-				# write the image to temporary file
-				t = TempImage()
-				cv2.imwrite(t.path, frame)
-				#//print ("[UPLOAD] {}".format(ts))
-				path = "{base_path}/{timestamp}.jpg".format(base_path="/", timestamp=ts)
-				client.put_file(open(t.path, "rb").read(), path)
-				t.cleanup()
-				"""
-                                    # update the last uploaded timestamp and reset the motion
-                                    # counter
-				lastUploaded = timestamp
-				motionCounter = 0
+                # otherwise, no motion detected
+                else:
+                    motionCounter = 0
 
-	# otherwise, no motion detected
-	else:
-		motionCounter = 0
-
-	# clear the stream in preparation for the next frame
-	rawCapture.truncate(0)
-
-
-#-------------------------------------------------------------------------------------------------------------
-
-"""
-
-#FACE DETECTION
-				found = False
-                                    
-			        fr = f.array
-
-				#Now creates an OpenCV image
-                                image = cv2.imdecode(fr,1)
-                                #cv2.imwrite("temp.jpg",image)
-
-                #Convert to grayscale
-                                #gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
-
-                                    #Look for faces in the image using the loaded cascade file
-                                faces = face_cascade.detectMultiScale(image, 1.1, 5)
-
-                                    #if(len(faces) >= 1):  # found 1 or more face
-					# RECOGNITION
-
-                                    #Draw a rectangle around every found face
-                                for (x,y,w,h) in faces:
-                                    cv2.rectangle(image,(x,y),(x+w,y+h),(0,255,0),2)
-
-
-                                if(len(faces) >= 1):
-                                    print("Found "+str(len(faces))+" face(s)")
-                                    x = rand.randint(1000,3000)
-                                    s = str(x)
-                                    result = 'result' + s + '.jpg'
-                                    cv2.imwrite(result,image)
-                                    found = True
-                                    #Save the result image
-                                   """
+                # clear the stream in preparation for the next frame
+                rawCapture.truncate(0)

@@ -42,7 +42,7 @@ def allFilesUnder(path):
 			yield os.path.join(cur_path, filename)
 
 
-def unlockDoor:
+def unlockDoor():
     relay.off()
     time.sleep(5)
     relay.on()

@@ -14,7 +14,7 @@ def valid_entrant(img):
 	im = image.img_to_array(img)
 	im2 = transform.resize(im, (224,224,3)) #resize input image
 	preds = model.predict(im2)
-	x = (preds[0][0])
+	x = (preds[0][0])  # class label of our most likely prediction
 	if x in permitted:
 		return True
 	else:

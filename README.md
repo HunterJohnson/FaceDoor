@@ -44,7 +44,7 @@ See here: https://github.com/ageitgey/face_recognition
 
     if motion_detected():
        
-       if face_detected()
+       if face_detected():
      
           if valid_entrant(img):
           

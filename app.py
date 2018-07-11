@@ -29,6 +29,7 @@ def main():
 		else:
 			print("No motion detected")
 
+			
 if __name__ == "__main__":
 	main()
 

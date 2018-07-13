@@ -13,7 +13,7 @@ relay = OutputDevice(17)
 
 
 def main():
-	relay.on()
+	relay.on() # lock door
 	while(True):
 		if(motion_detected()):
 			if(face_detected()):
@@ -46,6 +46,6 @@ def allFilesUnder(path):
 
 def unlockDoor():
     relay.off()
-    time.sleep(5)
+    time.sleep(5) # 5 seconds until door re-locks
     relay.on()
 

@@ -1,3 +1,5 @@
+# convert keras model to json format
+
 from keras.models import Model, Sequential, model_from_yaml, model_from_json
 import numpy as np
 
@@ -22,7 +24,7 @@ def create_model():
 	return model
 
 
-def load_trained_model(weights_path):
+def load_trained_model(weights_path): # path to .h5 / .hdf5
    model = create_model()
    model.load_weights(weights_path)
    return model 

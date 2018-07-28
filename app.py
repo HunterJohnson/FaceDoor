@@ -46,6 +46,6 @@ def allFilesUnder(path):
 
 def unlockDoor():
     relay.off()
-    time.sleep(5) # 5 seconds until door re-locks
+    time.sleep(5) # 5 seconds until door re-locks, adjust as necessary 
     relay.on()
 

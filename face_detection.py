@@ -1,4 +1,4 @@
-
+# detect a face in a live feed
 import io
 import picamera
 import cv2

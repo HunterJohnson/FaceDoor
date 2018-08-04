@@ -1,4 +1,6 @@
 # Hunter Johnson - 2018
+# program runs as infinite loop until terminated
+
 
 import RPi.GPIO as GPIO
 from motion_detection import motion_detected

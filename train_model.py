@@ -1,6 +1,6 @@
 #Verifying faces found in AR_Face / LFW dataset, this file is used to train our model 
 
-# once we have a .h5 file with the architecture + weights
+# once we have a .h5/.hdf5 file with the stored architecture + weights
 # of the trained VGG_Face model, we use that to make predictions on new images
 
 import os
@@ -133,7 +133,6 @@ for layer in vggface_model.layers:
 adamax = Adamax(lr=0.002, beta_1=0.9, beta_2=0.999, epsilon=1e-08, decay=0.0)
 
 #compile and train model
-
 
 vggface_model.compile(adamax, 'categorical_crossentropy', metrics=['accuracy'])
 vggface_model.fit_generator(train_generator,

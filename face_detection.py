@@ -11,7 +11,7 @@ def face_detected():
     start = time.time()
     end = 0
     diff = 0
-    while(found != True or diff <= 30.0): # function has 30 seconds to find a face, otherwise revert to motion_detection()
+    while(found != True or diff <= 30.0): # function has 30 seconds to find a face, then reverts to motion_detection()
         #Create a memory stream so photos doesn't need to be saved in a file
         stream = io.BytesIO()
 
@@ -41,14 +41,14 @@ def face_detected():
     #Draw a rectangle around every found face
         for (x,y,w,h) in faces:
             cv2.rectangle(image,(x,y),(x+w,y+h),(0,255,0),2)
-            image_faces.append(image[y:(y+h),x:(x+w)]) # this line of code crops the image to keep only the bounded face
+            image_faces.append(image[y:(y+h),x:(x+w)]) # crops the image to keep only the bounded face for model input
 
         if(len(faces) >= 1):
             #save result image
             x = rand.randint(1000,1200) # should probably use a timestamp to label images instead
             s = str(x)
             for i, face in enumerate(image_faces):
-                cv2.imwrite("face-" + s + ".jpg", face)
+                cv2.imwrite("face-" + s + ".jpg", face) # save face pics
             found = True
             camera.close()
             return True

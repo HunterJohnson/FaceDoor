@@ -45,10 +45,11 @@ def face_detected():
 
         if(len(faces) >= 1):
             #save result image
-            x = rand.randint(1000,1200) # should probably use a timestamp to label images instead
-            s = str(x)
+            t = time.time()
+            s = str(t)
+            stamp = s.split('.')[0]
             for i, face in enumerate(image_faces):
-                cv2.imwrite("face-" + s + ".jpg", face) # save face pics
+                cv2.imwrite("face-" + stamp + ".jpg", face) # save timestamped face pics
             found = True
             camera.close()
             return True

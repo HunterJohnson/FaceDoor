@@ -3,7 +3,7 @@ import io
 import picamera
 import cv2
 import random as rand
-import numpy
+import numpy as np
 import time
 
 def face_detected():
@@ -22,7 +22,7 @@ def face_detected():
             camera.capture(stream, format='jpeg')
 
     #Convert the picture into a numpy array
-        buff = numpy.fromstring(stream.getvalue(), dtype=numpy.uint8)
+        buff = np.fromstring(stream.getvalue(), dtype=numpy.uint8)
 
     #create an OpenCV image
         image = cv2.imdecode(buff, 1)

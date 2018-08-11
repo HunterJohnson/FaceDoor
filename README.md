@@ -42,15 +42,18 @@ See here: https://github.com/ageitgey/face_recognition
  ---------------------------------------------------------------------------------------------------------------------
 
 
-    if motion_detected():
+
+    while(door_is_active):
+    
+         if motion_detected():
        
-       if face_detected():
+             if face_detected():
      
-          if valid_entrant(img):
+                 if valid_entrant(img):
           
-                unlock_door()
-                
-          else:
+                     unlock_door()
+                 
+                 else:
           
-               "Access Denied"
+                     "Access Denied"
         

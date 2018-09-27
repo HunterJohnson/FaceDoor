@@ -36,7 +36,7 @@ if __name__ == "__main__":
 	main()
 
 
-def getLatestFace():
+def getLatestFace(): # most recent face capture
 	latest_file = max(allFilesUnder('/home/pi/Documents/frdoor_project/'), key=os.path.getmtime)
 	return latest_file
 

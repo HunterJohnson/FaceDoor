@@ -29,7 +29,7 @@ def load_trained_model(weights_path): # path to .h5 / .hdf5
    model.load_weights(weights_path)
    return model 
 
-xmod = load_trained_model("best_weights.h5")
+xmod = load_trained_model("trained_weights.h5") # or VGGFace default weights
 
 model_json = xmod.to_json()
 with open("model.json","w") as fo:

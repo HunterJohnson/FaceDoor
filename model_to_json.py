@@ -2,7 +2,6 @@
 
 from keras.models import Model, Sequential, model_from_yaml, model_from_json
 import numpy as np
-
 from keras import applications
 from keras.callbacks import ModelCheckpoint
 from keras.preprocessing.image import ImageDataGenerator

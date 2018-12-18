@@ -1,0 +1,15 @@
+So if you want to optimize the performance of your model that ultimately decides whether or not someone is permitted access
+through the door.... the people who should be allowed inside need to have a sufficient number of good pictures represented 
+in the training set used for your model. 
+
+Finding and organizing pictures one by one can be cumbersome, but there are tools out there you could use to scrape a 
+social media profile or Google Images results for pictures that could be used in training.
+
+I use AWS GPU instances to train my model quickly and efficiently, usually p2.xlarge which can be very cheap 
+especially as spot instances. 
+
+Note that VGGFace is just one implementation of facial recognition, specifically using
+a CNN-architecture (deep neural network) to implement a facial descriptor. There are several
+other approaches and neural network architectures that have achieved similar performance, such as 
+DeepFace from FAIR.
+

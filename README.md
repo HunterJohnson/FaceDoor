@@ -7,8 +7,11 @@ door lock system using Facial Recognition on the Raspberry Pi
 1. Credit for motion_detection goes to Adrian Rosebrock at PyImageSearch
 https://www.pyimagesearch.com/2015/06/01/home-surveillance-and-motion-detection-with-the-raspberry-pi-python-and-opencv/
 
---for the facial recognition component, instead of using VGG_Face & Keras it may be easier
+--> for the facial recognition component, instead of using VGG_Face + Keras it may be easier
 to use this API that I discovered after completing this project
+
+--> or you can use Keras / .h5 weights from other CNN architectures (such as DeepFace from FAIR)
+https://research.fb.com/publications/deepface-closing-the-gap-to-human-level-performance-in-face-verification/
 
 See here: https://github.com/ageitgey/face_recognition
 

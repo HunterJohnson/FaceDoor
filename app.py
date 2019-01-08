@@ -20,6 +20,7 @@ def main():
 		if(motion_detected()):
 			if(face_detected()):
 				print("Face Detected!")
+				#or load all face pics in past 10s timeframe instead of getting latest
 				img = getLatestFace()   # all detected faces are cropped to bounding box and saved as jpg
 				if(valid_entrant(img)):
 					print("Permission Granted!")
